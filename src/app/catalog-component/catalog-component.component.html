@@ -1,0 +1,268 @@
+<!--<div>
+  <h1 class="page-title">Découvrez nos produits exclusifs</h1>
+  <ul class="products">
+    <ng-container *ngFor="let product of products">
+      <li class="product-item" [ngClass]="{'low-quantity': product.quantity < 5}" *ngIf="product.quantity > 0">
+        <div [ngClass]="{'low-stock': isLowStock(product.quantity)}" class="product">
+          <div class="product-details">
+            <img [src]="product.productImage" alt="{{ product.productTitle }}" />
+            <div class="product-info">
+              <div class="name">{{ product.productTitle }}</div>
+            <br>
+              <button class="more-details-cta" (click)="toggleDescription(product)">
+                {{ product.showDescription ? 'afficher moins détails' : 'afficher plus détails' }}
+              </button>
+            </div>
+             <div class="description" *ngIf="product.showDescription">
+              <h3>{{ product.details }}</h3>
+              <p>Quantité: {{ product.quantity }}</p>
+              <p>{{ product.productTitle }}</p>
+            </div>
+            <app-product-details-component ></app-product-details-component>
+          </div>
+
+          <div class="price">
+            <div>{{ product.productPrice }}</div>
+            <button class="buy-cta" (click)="showProductDetails(product)">Acheter maintenant </button>
+          </div>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</div>
+
+
+
+<app-product-details-component [product]="selectedProduct" *ngIf="selectedProduct"></app-product-details-component>
+-->
+<header class="header navbar-area">
+  <!-- Start Topbar -->
+  <!--<app-header [user]="user"></app-header>-->
+  <!-- End Topbar -->
+  <!-- Start Header Middle -->
+  <div class="header-middle">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-3 col-md-3 col-7">
+                  <!-- Start Header Logo -->
+                  <a class="navbar-brand" href="index.html">
+                      <img src="assets/images/logo/logo.svg" alt="Logo">
+                  </a>
+                  <!-- End Header Logo -->
+              </div>
+              <div class="col-lg-5 col-md-7 d-xs-none">
+                  <!-- Start Main Menu Search -->
+                  <div class="main-menu-search">
+                      <!-- navbar search start -->
+                      <div class="navbar-search search-style-5">
+                        <div class="search-input">
+                      
+                        
+                        </div>
+                        <form class="search-form">
+                          <div class="search-input">
+                           <div>
+                              <input type="text" [(ngModel)]="searchCategory" name="searchCategory" placeholder="Search category..." >
+                              <input type="text" [(ngModel)]="searchDetails" name="searchDetails" placeholder="Search details...">
+                              <button (click)="applyFilter()" class="button"><i class="lni lni-search-alt"></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      
+                      </div>
+                      <!-- navbar search Ends -->
+                  </div>
+                  <!-- End Main Menu Search -->
+              </div>
+              <div class="col-lg-4 col-md-2 col-5">
+                  <div class="middle-right-area">
+                      <div class="nav-hotline">
+                          <i class="lni lni-phone"></i>
+                          <h3>Hotline:
+                              <span>(+212)684233467 </span>
+                          </h3>
+                      </div>
+                      <div class="navbar-cart">
+                          <!-- important  -->
+                          <div class="cart-items">
+                              <a href="javascript:void(0)" class="main-btn">
+                                  <i class="lni lni-cart"></i>
+                                 
+                              </a>
+                              <!-- Shopping Item -->
+                              <div class="shopping-item" >
+                            
+                                  <div class="dropdown-cart-header">
+                                      <span></span>
+                                      <a href="cart.html">View Cart</a>
+                                  </div>
+                                  <ul class="shopping-list">
+                                      <li>
+                                    
+                                          <app-cart ></app-cart>
+                                      </li>
+                                  </ul>
+                                
+                              </div>
+                              <!--/ End Shopping Item -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End Header Middle -->
+  <!-- Start Header Bottom -->
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-8 col-md-6 col-12">
+              <div class="nav-inner">
+                  <!-- Start Mega Category Menu -->
+                  <div class="mega-category-menu">
+
+                     <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
+                      <ul class="sub-category">
+                          <li><a href="product-grids.html">Electronics <i class="lni lni-chevron-right"></i></a>
+                              <ul class="inner-sub-category">
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'camera_degital'}" routerLinkActive="active" class="button">Digital Cameras</a></li>
+      
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'drone'}" routerLinkActive="active" class="button">Camera Drones</a></li>
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'smart_watch'}" routerLinkActive="active" class="button">Smart Watches</a></li>
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'headphones'}" routerLinkActive="active" class="button">Headphones</a></li>
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'MP3'}" routerLinkActive="active" class="button">MP3 Players</a></li>
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'microphones'}" routerLinkActive="active" class="button">Microphones</a></li>
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'Chargers'}" routerLinkActive="active" class="button">Chargers</a></li>
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'baterie'}" routerLinkActive="active" class="button">Batteries</a></li>
+                                  <li><a routerLink="/catalog" [queryParams]="{filter:'Cables'}" routerLinkActive="active" class="button">Cables & Adapters</a></li>
+                              </ul>
+                          </li>
+            
+                          <li><a routerLink="/catalog" [queryParams]="{filter:'TV'}" routerLinkActive="active" class="button">Televisions</a></li>
+      
+                         
+                          <li><a routerLink="/catalog" [queryParams]="{filter:'watch'}" routerLinkActive="active" class="button">watch</a></li>
+                          <li><a routerLink="/catalog" [queryParams]="{filter:'Microphones'}" routerLinkActive="active" class="button">Home Audio & Theater</a></li>
+                          <li><a routerLink="/catalog" [queryParams]="{filter:'computer'}" routerLinkActive="active" class="button">Computers & Tablets </a></li>
+                          <li><a routerLink="/catalog" [queryParams]="{filter:'video_game'}" routerLinkActive="active" class="button">Video Games </a></li>
+                          
+                      </ul>
+
+                    
+                      
+                  </div>
+                  <div class="filters">
+
+                    <a routerLink="/catalog" [queryParams]="{filter:'phone'}" routerLinkActive="active" class="button"> Smart Phone </a>
+                
+                    <a routerLink="/catalog" [queryParams]="{filter:'tablette'}" routerLinkActive="active" class="button"> Tablet </a>
+                
+                    <a routerLink="/catalog" [queryParams]="{filter:'TV'}" routerLinkActive="active" class="button"> Smart TV </a>
+                
+                    <a routerLink="/catalog"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="button"> All </a>
+                
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+             
+          </div>
+      </div>
+  </div>
+  <!-- End Header Bottom -->
+</header>
+<section class="hero-area">
+  <div class="container">
+      <div class="row">
+        
+        <div class="col-lg-8 col-12 custom-padding-right">
+          <div class="product-item" >
+            <div class="single-product">
+              <app-offer ></app-offer>
+            </div>
+          </div>
+        </div>
+          
+        
+        <div class="col-lg-4 col-12">
+          <!-- Start Single Large Banner -->
+          <div class="hero-large-banner" style="background-image: url('assets/images/black.jpg'); height: 100%; background-size: cover; background-position: center;"></div>
+          <!-- End Single Large Banner -->
+        </div>
+
+      </div>
+
+      
+  </div>
+</section>
+<section class="trending-product section" style="margin-top: 12px;">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="section-title">
+                  <h2>Trending Product</h2>
+                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                      suffered alteration in some form.</p>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <!-- <div class="col-lg-3 col-md-6 col-12" *ngFor="let product of getFilteredProducts()">
+              <div class="product-item" [ngClass]="{'low-quantity': product.quantity < 5, 'out-of-stock': product.quantity === 0}">
+                <div [ngClass]="{'low-stock': isLowStock(product.quantity)}" class="single-product">
+                  <app-product-details-component [product]="product"></app-product-details-component>
+                </div>
+              </div>-->
+              
+              <div class="col-lg-3 col-md-6 col-12" *ngFor="let product of products">
+                <div class="product-item" [ngClass]="{'low-quantity': product.quantity < 5, 'out-of-stock': product.quantity === 0}" *ngIf="product.quantity > 0" >
+                  <div [ngClass]="{'low-stock': isLowStock(product.quantity)}" class="single-product" >
+                    <app-product-details-component [product]="product"></app-product-details-component>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+        
+     
+        
+      </div>
+
+<!--    <div class="row">
+  <ng-container *ngFor="let product of products">
+    <div class="col-lg-3 col-md-6 col-12">
+      <div class="product-item" [ngClass]="{'low-quantity': product.quantity < 5}" *ngIf="product.quantity > 0">
+        <div [ngClass]="{'low-stock': isLowStock(product.quantity)}" class="single-product">
+          <app-product-details-component [product]="product"></app-product-details-component>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+-->
+  </div>
+ 
+
+
+</section>
+
+
+
+<!-- src/app/catalog/catalog-component.component.html
+<div>
+  <h1 class="page-title">Découvrez nos produits exclusifs</h1>
+  <ul class="products">
+    <ng-container *ngFor="let product of products">
+      <li class="product-item" [ngClass]="{'low-quantity': product.quantity < 5}" *ngIf="product.quantity > 0">
+        <div [ngClass]="{'low-stock': isLowStock(product.quantity)}" class="product">
+        <app-product-details-component [product]="product"></app-product-details-component>
+        <app-cart [product]="product"></app-cart>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</div> -->

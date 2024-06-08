@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "TP4Angular": {
+      "i18n": {
+        "sourceLocale":"en-US",
+        "locales": {
+          "fr-CA":"src/locale/messages.fr.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,9 +31,42 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
+              "node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+              "node_modules/admin-lte/dist/css/adminlte.min.css",
+              "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css",
+              "node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css",
+              "node_modules/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css",
+  "src/styles.css",
+  "src/assets/css/bootstrap.min.css",
+  "src/assets/css/LineIcons.3.0.css",
+  "src/assets/css/tiny-slider.css",
+  "src/assets/css/glightbox.min.css",
+  "src/assets/css/main.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
+              "node_modules/admin-lte/dist/js/adminlte.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js",
+              
+              "node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js",
+              "node_modules/datatables.net-responsive/js/dataTables.responsive.min.js",
+              "node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js",
+              "node_modules/datatables.net-buttons/js/dataTables.buttons.min.js",
+              "node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js",
+              "node_modules/jszip/dist/jszip.min.js",
+              "node_modules/pdfmake/build/pdfmake.min.js",
+              "node_modules/pdfmake/build/vfs_fonts.js",
+              "node_modules/datatables.net-buttons/js/buttons.html5.min.js",
+              "node_modules/datatables.net-buttons/js/buttons.print.min.js",
+              "node_modules/datatables.net-buttons/js/buttons.colVis.min.js"
+             
+    
+            ],
+
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -40,12 +79,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "10kb"
                 }
               ],
               "outputHashing": "all"
@@ -89,6 +128,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -96,5 +136,11 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "42f868a9-f301-48bb-b44d-fff243ad212e"
   }
+  
 }
+
+

@@ -1,0 +1,466 @@
+
+/*
+.container {
+  margin: 20px auto;
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #666;
+}
+
+.robot-parts-cta {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.robot-parts-cta li {
+  margin: 0 10px;
+}
+
+.part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.part:hover {
+  transform: translateY(-5px);
+}
+
+.part img {
+  width: 220px; 
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.part-name {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #d1cccc;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero img {
+  max-width: 100%;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.benefits {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.benefit {
+  text-align: center;
+}
+
+.benefit img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.benefit h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.benefit p {
+  font-size: 16px;
+}
+
+.robot-parts-cta {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+
+.part {
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.part img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.part div {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/*@import url("https://fonts.googleapis.com/css?family=Fredoka+One");*/
+
+.store-container {
+  line-height:0;
+  margin: 50px auto;
+  width: 50%;
+}
+.stroke {
+  stroke: #0170bb;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.round-end {
+  stroke-linecap: round;
+}
+#store {
+  animation: fadeIn 0.8s ease-in;
+}
+.border-animation {
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+.border-animation:after {
+  content: "";
+  background: linear-gradient(45deg, #ccc 48.9%, #0170bb 49%);
+  background-size: 300% 300%;
+  border-radius: 10px;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  height: calc(100% + 10px);
+  width: calc(100% + 10px);
+  z-index: -1;
+  animation: borderGradient 8s linear both infinite;
+}
+@keyframes borderGradient {
+  0%,
+  100% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+#browser {
+  transform: translateY(-100%);
+  -webkit-animation: moveDown 1.5s cubic-bezier(0.77, -0.5, 0.3, 1.5) forwards;
+  animation: moveDown 1.5s cubic-bezier(0.77, -0.5, 0.3, 1.5) forwards;
+}
+@keyframes moveDown {
+  from {
+    transform: translate(0, -100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+#toldo {
+  animation: fadeIn 1s 1.4s ease-in forwards;
+}
+.grass {
+  animation: fadeIn 0.5s 1.6s ease-in forwards;
+}
+#window {
+  animation: fadeIn 0.5s 1.8s ease-in forwards;
+}
+#door {
+  animation: fadeIn 0.5s 2s ease-in forwards;
+}
+#sign {
+  transform-origin: 837px 597px;
+  animation: pendulum 1.5s 2s ease-in-out alternate;
+}
+.trees {
+  animation: fadeIn 0.5s 2.2s ease-in forwards;
+}
+#toldo,
+.grass,
+#window,
+#door,
+.trees,
+.cat,
+.cat-shadow,
+.box,
+.parachute,
+.tshirt,
+.cap,
+.ball,
+#text,
+#button,
+.sky-circle,
+.sky-circle2,
+.sky-circle3 {
+  opacity: 0;
+}
+@keyframes pendulum {
+  20% {
+    transform: rotate(60deg);
+  }
+  40% {
+    transform: rotate(-40deg);
+  }
+  60% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+}
+.cat {
+  transform-origin: 1145px 620px;
+}
+.cat-shadow {
+  transform-origin: 1115px 625px;
+}
+#store:hover .cat {
+  animation: catHi 3s 3s cubic-bezier(0.7, -0.5, 0.3, 1.4);
+}
+#store:hover .cat-shadow {
+  animation: catShadow 4s 2s cubic-bezier(0.7, -0.5, 0.3, 1.4) alternate;
+}
+@keyframes catHi {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  10%,
+  60% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes catShadow {
+  0%,
+  100% {
+    transform: translate(40px, -35px) scale(0.3);
+  }
+  10%,
+  60% {
+    opacity: 1;
+    transform: translate(-5px, 10px) scale(0.5);
+  }
+  60% {
+    opacity: 0;
+  }
+}
+.box,
+.parachute {
+  transform-origin: 430px 100px;
+  animation: moveBox 14s 4s linear forwards infinite;
+}
+.parachute {
+  animation: parachute 14s 4s linear forwards infinite;
+}
+@keyframes moveBox {
+  0% {
+    opacity: 0;
+    transform: translate(0, -150px) rotate(20deg);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(0, 100px) rotate(-15deg);
+  }
+  25% {
+    transform: translate(0, 250px) rotate(10deg);
+  }
+  30% {
+    transform: translate(0, 350px) rotate(-5deg);
+  }
+  35% {
+    opacity: 1;
+    transform: translate(0, 570px) rotate(0deg);
+  }
+  45%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 570px);
+  }
+}
+@keyframes parachute {
+  0% {
+    transform: translate(0, -150px) rotate(20deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    transform: translate(0, 100px) rotate(-15deg) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(0, 250px) rotate(10deg);
+  }
+  30% {
+    transform: translate(0, 350px) rotate(-5deg);
+  }
+  33% {
+    transform: translate(0, 460px) rotate(0deg) scale(0.9);
+    opacity: 1;
+  }
+  45%,
+  100% {
+    transform: translate(0, 480px);
+    opacity: 0;
+  }
+}
+.tshirt {
+  animation: fadeInOut 42s 10s ease-in forwards infinite;
+}
+.cap {
+  animation: fadeInOut 42s 24s ease-in forwards infinite;
+}
+.ball {
+  animation: fadeInOut 42s 38s ease-in forwards infinite;
+}
+#text,
+#button {
+  animation: fadeIn 1s 5s ease-in forwards;
+}
+@keyframes fadeInOut {
+  5%,
+  12% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+.cloud {
+  animation: clouds 50s linear backwards infinite;
+}
+.cloud2 {
+  animation: clouds 40s 40s linear backwards infinite;
+}
+.plane {
+  animation: clouds 30s linear backwards infinite;
+  will-change: transform;
+}
+@keyframes clouds {
+  from {
+    transform: translate(-150%, 0);
+  }
+  to {
+    transform: translate(150%, 0);
+  }
+}
+.sky-circle {
+  animation: fadeInOut 10s 5s ease-in infinite;
+}
+.sky-circle2 {
+  animation: fadeInOut 12s 30s ease-in infinite;
+}
+.sky-circle3 {
+  animation: fadeInOut 8s 40s ease-in infinite;
+}
+
+
+
+
+
+
+
+#testbutton {
+  width: 150px;
+  height: 50px;
+  border-radius: 180px;
+  position: relative;
+  left: 6%;
+  transform: translateX(-50%);
+  top: calc(50% - 25px); /* Garder le même placement vertical */
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  cursor: pointer;
+  line-height: 12px;
+}
+
+#testbutton:before {
+  content:'';
+  z-index:1;
+  position:absolute;
+  display:block;
+  width:80%;
+  height:70%;
+  top:15%;
+  left:10%;
+  transition: 0.3s opacity ease-in-out;
+  filter:blur(15px);
+  opacity:0;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+
+#testbutton:hover:before {
+  opacity:1;
+  transition: 0.3s opacity ease-in-out;
+  filter:blur(25px);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);  
+}
+
+#testbutton:after {
+  content:'Shop Now!';
+  text-align:center;
+  line-height:40px;
+  font-size:18px;
+  color:rgba(235,235,235,1);
+  font-weight:bold;
+  z-index:5;
+  position:absolute;
+  display:block;
+  border-radius:180px;
+  width:92%;
+  height:80%;
+  top:10%;
+  left:4%;  
+  background-color:rgb(19, 20, 22);
+}
+
+
+
